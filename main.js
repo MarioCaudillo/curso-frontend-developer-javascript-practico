@@ -9,7 +9,7 @@ const mobileMenu    =   document.querySelector('.mobile-menu');
 menuBurgerIcon.addEventListener('click', togglemobilepMenu);
 
 /* Aside Product Detail*/
-const   asideProduct   =   document.querySelector('.product-detail');
+const   asideProduct   =   document.querySelector('#shoppingCartContainer');
 const   carritoIconMenu =   document.querySelector('.navbar-shopping-cart');
 carritoIconMenu.addEventListener('click', togglecarritoMenu);
 
