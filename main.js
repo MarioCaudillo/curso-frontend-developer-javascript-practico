@@ -10,8 +10,11 @@ menuBurgerIcon.addEventListener('click', togglemobilepMenu);
 
 /* Aside Product Detail*/
 const   asideProduct   =   document.querySelector('#shoppingCartContainer');
+const   productDetailContainer  =   document.querySelector('#productDetail');
+const   closeProductDetailIcon  =   document.querySelector('.product-detail-close');
 const   carritoIconMenu =   document.querySelector('.navbar-shopping-cart');
 carritoIconMenu.addEventListener('click', togglecarritoMenu);
+closeProductDetailIcon.addEventListener('click', closeProductDetailAside);
 
 /*Product cart*/
 const   cardsContainer  =   document.querySelector('.cards-container');
@@ -39,7 +42,7 @@ function togglecarritoMenu(event){
     }else{
         desktopMenu.classList.toggle('inactive');
     }
-    asideProduct.classList.toggle('inactive');   
+    asideProduct.classList.toggle('inactive');
 }
 
 const productList   =   [];
@@ -75,6 +78,7 @@ function renderProduct(array){
     
         const   productImg =   document.createElement('img');
         productImg.setAttribute('src', product.image);
+        productImg.addEventListener('click', openProductDetailAside);
     
         const  productInfo =   document.createElement('div');
         productInfo.classList.add('product-info');
@@ -105,3 +109,11 @@ function renderProduct(array){
     }
 }
 renderProduct(productList);
+
+function openProductDetailAside(){
+    productDetailContainer.classList.remove('inactive');
+}
+
+function closeProductDetailAside(){
+    productDetailContainer.classList.add('inactive');
+}
